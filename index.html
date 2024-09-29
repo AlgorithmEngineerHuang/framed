@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片画框生成器</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>图片画框生成器</h1>
+    </header>
+    <main>
+        <section id="upload-section">
+            <input type="file" id="image-upload" accept="image/*">
+            <label for="image-upload">选择图片</label>
+        </section>
+        <section id="preview-section">
+            <div id="image-preview">
+                <div id="edit-icons">
+                    <i class="fas fa-sun" id="brightness-icon" title="亮度"></i>
+                    <i class="fas fa-adjust" id="contrast-icon" title="对比度"></i>
+                    <i class="fas fa-palette" id="saturation-icon" title="饱和度"></i>
+                    <i class="fas fa-search-plus" id="zoom-icon" title="缩放"></i>
+                    <!-- 移除这一行 -->
+                    <!-- <i class="fas fa-crop" id="crop-icon" title="剪裁"></i> -->
+                    <i class="fas fa-undo" id="flip-icon" title="翻转"></i>
+                </div>
+                <div id="edit-options" class="hidden">
+                    <input type="range" id="brightness" min="0" max="200" value="100">
+                    <input type="range" id="contrast" min="0" max="200" value="100">
+                    <input type="range" id="saturation" min="0" max="200" value="100">
+                    <input type="range" id="zoom" min="50" max="200" value="100">
+                </div>
+                <i class="fas fa-download" id="download-icon" title="下载图片"></i>
+            </div>
+        </section>
+        <section id="frame-options">
+            <h2>选择画框样式</h2>
+            <select id="frame-style">
+                <option value="none">无画框</option>
+                <option value="simple">简单画框</option>
+            </select>
+            <input type="color" id="frame-color" value="#FFFFFF">
+            <label for="frame-color">画框颜色</label>
+            <input type="range" id="frame-width" min="1" max="100" value="10">
+            <label for="frame-width">画框宽度: <span id="frame-width-value">10px</span></label>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
